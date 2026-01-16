@@ -1,12 +1,15 @@
 package main
 
 import (
+	"test-api/db"
 	"test-api/handlers"
 
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	db.Connect()
+
 	r := gin.Default()
 
 	r.GET("/items", handlers.GetItems)
